@@ -9,25 +9,25 @@ Kerjakan sesuai branch masing masing
 Clone repo menggunakan GitHub Cli
 
 ```bash
-    gh repo clone leviathan712/pkkmb-trilogi
+gh repo clone leviathan712/pkkmb-trilogi
 ```
 
 Lalu ikuti langkah berikut
 
 ```bash
-    composer install
+composer install
 ```
 ```bash
-    cp .env.example .env
+cp .env.example .env
 ```
 ```bash
-    php artisan key:generate
+php artisan key:generate
 ```
 ```bash
-    php artisan migrate
+php artisan migrate
 ```
 ```bash
-    npm install
+npm install
 ```
 
 ## Prosedur Menjalankan Program
@@ -35,10 +35,10 @@ Lalu ikuti langkah berikut
 Jalankan pada 2 git bash untuk menjalankan laravel dan npm dev
 
 ```bash
-    php artisan serve
+php artisan serve
 ```
 ```bash
-    npm run dev
+npm run dev
 ```
 
 ## Prosedur Mengupdate Repo Berdasarkan Branch
