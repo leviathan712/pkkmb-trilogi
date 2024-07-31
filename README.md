@@ -1,7 +1,7 @@
 
 # Project PKKMB Trilogi
 
-Kerjakan sesuai branch masing masing
+Kerjakan sesuai branch masing - masing
 
 
 ## Prosedur Instalasi
