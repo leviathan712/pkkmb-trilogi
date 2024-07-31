@@ -51,12 +51,12 @@ git branch -a
 
 pindah branch
 ```bash
-git checkout -b [name_of_your_new_branch]
+git checkout [name_of_your_new_branch]
 ```
 
 untuk menambah perubahan
 ```bash
-git branch -a
+git add .
 ```
 
 commit
