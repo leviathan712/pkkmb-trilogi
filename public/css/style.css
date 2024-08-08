@@ -20,56 +20,161 @@ h2 {
 }
 
 #countdown {
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
+}
+/*----------------genealogy-scroll----------*/
+
+.genealogy-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+.genealogy-scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb {
+    background: #212121;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.genealogy-scroll::-webkit-scrollbar-thumb:hover {
+    background: #d5b14c;
+    transition: 0.5s;
 }
 
-.hero-container {
+
+/*----------------genealogy-tree----------*/
+.genealogy-body{
+    white-space: nowrap;
+    overflow-y: hidden;
     padding: 50px;
+    min-height: 500px;
+    padding-top: 10px;
+    text-align: center;
 }
-
-.hero-container h1 {
-    font-size: 46px;
-    margin-top: 50px;
+.genealogy-tree{
+  display: inline-block;
 }
-
-.hero-container p {
-    font-size: 18px;
-    margin-top: 50px;
-}
-
-.hero-container img {
-    width: 100%;
-    height: auto;
-}
-
-.rounded-top-right {
-    border-top-right-radius: 100px;
-}
-
-.hero-call-to-action {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.btn-custom {
-    background-color: transparent;
-    border-color: transparent;
-    color: inherit;
-}
-
-.image-container {
+.genealogy-tree ul {
+    padding-top: 20px; 
     position: relative;
-    overflow: hidden;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+.genealogy-tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+.genealogy-tree li::before, .genealogy-tree li::after{
+    content: '';
+    position: absolute; 
+  top: 0; 
+  right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%; 
+  height: 18px;
+}
+.genealogy-tree li::after{
+    right: auto; left: 50%;
+    border-left: 2px solid #ccc;
+}
+.genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+    display: none;
+}
+.genealogy-tree li:only-child{ 
+    padding-top: 0;
+}
+.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
+    border: 0 none;
+}
+.genealogy-tree li:last-child::before{
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.genealogy-tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+.genealogy-tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0; height: 20px;
+}
+.genealogy-tree li a{
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
-.wave-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230099ff' fill-opacity='1' d='M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'/%3E%3C/svg%3E");
-    background-size: cover;
+.genealogy-tree li a:hover, 
+.genealogy-tree li a:hover+ul li a {
+	background: #c8e4f8;
+	color: #000;
+}
+
+.genealogy-tree li a:hover+ul li::after, 
+.genealogy-tree li a:hover+ul li::before, 
+.genealogy-tree li a:hover+ul::before, 
+.genealogy-tree li a:hover+ul ul::before{
+    border-color:  #fbba00;
+}
+
+/*--------------memeber-card-design----------*/
+
+.member-view-box{
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    border: 1px;
+    border-color: #e4e4e4;
+    border-style: solid;
+}
+.member-image{
+    padding:10px;
+    width: 120px;
+    position: relative;
+}
+.member-image img{
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    background-color :#fff;
+    z-index: 1;
+}
+.member-header {
+  padding: 5px 0;
+  text-align: center;
+  background: #345;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+}
+.member-footer {
+  text-align: center;
+}
+.member-footer div.name {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.member-footer div.downline {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 600px) {

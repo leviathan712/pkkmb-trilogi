@@ -1,35 +1,26 @@
-// Set the date we're counting down to
-var countDownDate = new Date("Aug 30, 2024 09:00:00").getTime();
-localStorage.setItem('countDownDate', countDownDate);
 
-// Function to update the countdown timer
 function updateCountdown() {
-  // Get today's date and time
-  var now = new Date().getTime();
+  const now = new Date().getTime();
+  const countdownDate = new Date("August 30, 2024 00:00:00").getTime();
+  const distance = countdownDate - now;
 
-  // Retrieve the countdown date from localStorage
-  var countDownDate = localStorage.getItem('countDownDate');
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+  document.getElementById("days").setAttribute('style', `--value:${days}`);
+  document.getElementById("hours").setAttribute('style', `--value:${hours}`);
+  document.getElementById("minutes").setAttribute('style', `--value:${minutes}`);
+  document.getElementById("seconds").setAttribute('style', `--value:${seconds}`);
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="countdown"
-  document.getElementById("countdown").innerHTML = days + "Hari " + hours + "Jam "
-  + minutes + "Menit " + seconds + "Detik ";
-
-  // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
+    document.getElementById("days").setAttribute('style', `--value:0`);
+    document.getElementById("hours").setAttribute('style', `--value:0`);
+    document.getElementById("minutes").setAttribute('style', `--value:0`);
+    document.getElementById("seconds").setAttribute('style', `--value:0`);
   }
 }
 
-// Update the countdown every 1 second
-var x = setInterval(updateCountdown, 1000);
-updateCountdown();
+const x = setInterval(updateCountdown, 1000);
