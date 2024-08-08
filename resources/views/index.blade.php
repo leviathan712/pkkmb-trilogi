@@ -6,13 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official Website PKKMB 2024 - Universitas Trilogi</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/dropdown.js') }}"></script>
+    <script src="{{ asset('js/countdown.js') }}"></script>
+    <link rel="shortcut icon" href="https://trilogi.ac.id/universitas/wp-content/uploads/2021/06/Logo-Trilogi.png"
+        type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-dark_navy">
-    <header class="dark:bg-dark_blue">
-        <h2 class="lg:text-2xl dark:text-white">Countdown Pelaksanaan PKKMB</h2>
-        <div id="countdown" class="dark:text-white lg:text-2xl"></div>
+<body class="bg-putih">
+    <header class="px-5">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="self-center px-4 lg:w-1/2 md:w-1/2 mx-auto">
+                    <h2 class="sm:text-sm lg:text-xl dark:text-black">Countdown Pelaksanaan PKKMB</h2>
+                </div>
+                <div class="self-center px-4 lg:w-1/2 md:w-1/2 mx-auto">
+                    <div id="countdown" class="grid auto-cols-max grid-flow-col gap-5 text-center float-right">
+                        <div class="flex flex-col">
+                            <div class="pt-2">
+                                <span
+                                    class="countdown font-mono sm:text-lg lg:text-xl border-solid border-2 border-cokelat rounded-full mb-2 p-2">
+                                    <span id="days" class="text-cokelat">0</span>
+                                </span>
+                            </div>
+                            <div class="pt-2">
+                                Hari
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="pt-2">
+                                <span
+                                    class="countdown font-mono sm:text-lg lg:text-xl border-solid border-2 border-cokelat rounded-full mb-2 p-2">
+                                    <span id="hours" class="text-cokelat">0</span>
+                                </span>
+                            </div>
+                            <div class="pt-2">
+                                Jam
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="pt-2">
+                                <span
+                                    class="countdown font-mono sm:text-lg lg:text-xl border-solid border-2 border-cokelat rounded-full mb-2 p-2">
+                                    <span id="minutes" class="text-cokelat">0</span>
+                                </span>
+                            </div>
+                            <div class="pt-2">
+                                Menit
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="pt-2">
+                                <span
+                                    class="countdown font-mono sm:text-lg lg:text-xl border-solid border-2 border-cokelat rounded-full mb-2 p-2">
+                                    <span id="seconds" class="text-cokelat">0</span>
+                                </span>
+                            </div>
+                            <div class="pt-2">
+                                Detik
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <hr class="border-gray-200 sm:mx-auto dark:border-white">
     <nav class="bg-white border-gray-200 dark:border-dark_blue dark:bg-dark_blue">
@@ -35,7 +92,7 @@
                 </svg>
             </button>
             <div id="mega-menu-full"
-                class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1">
+                class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1 px-5">
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-dark_blue dark:border-gray-700">
                     <li>
@@ -73,7 +130,8 @@
             <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
                 <ul>
                     <li>
-                        <a href="/latarbelakang" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <a href="/latarbelakang"
+                            class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             <div class="font-semibold">Latar Belakang</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that
                                 you're already using.</span>
@@ -87,7 +145,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/asaspelaksanaan" class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <a href="/asaspelaksanaan"
+                            class="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             <div class="font-semibold">Asas Pelaksanaan</div>
                             <span class="text-sm text-gray-500 dark:text-gray-400">Connect with third-party tools that
                                 you're already using.</span>
@@ -187,8 +246,64 @@
                 @include('content.tujuan')
             @endif
         </div>
+        
+
+<div data-dial-init class="fixed end-6 bottom-6 group">
+    <div id="speed-dial-menu-click" class="flex flex-col items-center hidden mb-4 space-y-2">
+        <button type="button" data-tooltip-target="tooltip-share" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                <path d="M14.419 10.581a3.564 3.564 0 0 0-2.574 1.1l-4.756-2.49a3.54 3.54 0 0 0 .072-.71 3.55 3.55 0 0 0-.043-.428L11.67 6.1a3.56 3.56 0 1 0-.831-2.265c.006.143.02.286.043.428L6.33 6.218a3.573 3.573 0 1 0-.175 4.743l4.756 2.491a3.58 3.58 0 1 0 3.508-2.871Z"/>
+            </svg>
+            <span class="sr-only">Share</span>
+        </button>
+        <div id="tooltip-share" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Share
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button type="button" data-tooltip-target="tooltip-print" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z"/>
+                <path d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"/>
+            </svg>
+            <span class="sr-only">Print</span>
+        </button>
+        <div id="tooltip-print" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Print
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button type="button" data-tooltip-target="tooltip-download" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 shadow-sm dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
+                <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Download</span>
+        </button>
+        <div id="tooltip-download" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Download
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button type="button" data-tooltip-target="tooltip-copy" data-tooltip-placement="left" class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 bg-white rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-sm dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                <path d="M5 9V4.13a2.96 2.96 0 0 0-1.293.749L.879 7.707A2.96 2.96 0 0 0 .13 9H5Zm11.066-9H9.829a2.98 2.98 0 0 0-2.122.879L7 1.584A.987.987 0 0 0 6.766 2h4.3A3.972 3.972 0 0 1 15 6v10h1.066A1.97 1.97 0 0 0 18 14V2a1.97 1.97 0 0 0-1.934-2Z"/>
+                <path d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z"/>
+            </svg>
+            <span class="sr-only">Copy</span>
+        </button>
+        <div id="tooltip-copy" role="tooltip" class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Copy
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+    </div>
+    <button type="button" data-dial-toggle="speed-dial-menu-click" data-dial-trigger="click" aria-controls="speed-dial-menu-click" aria-expanded="false" class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
+        <svg class="w-5 h-5 transition-transform group-hover:rotate-45" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+        </svg>
+        <span class="sr-only">Open actions menu</span>
+    </button>
+</div>
+
     </main>
-    <footer class="bg-white dark:bg-gray-900">
+    <footer class="bg-white dark:bg-gray-900 px-10">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
@@ -197,7 +312,7 @@
                             <img src="https://trilogi.ac.id/universitas/wp-content/uploads/2021/06/Logo-Trilogi.png"
                                 class="h-8" alt="FlowBite Logo" />
                         </span>
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Universitas
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Univ
                             Trilogi</span>
                     </a>
                 </div>
@@ -239,8 +354,9 @@
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                        href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="https://flowbite.com/" class="hover:underline">Universitas Trilogi</a>. All Rights
+                    Reserved.
                 </span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
                     <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -291,9 +407,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="{{ asset('js/countdown.js') }}"></script>
-    <script src="{{ asset('js/dropdown.js') }}"></script>
 </body>
 
 </html>
