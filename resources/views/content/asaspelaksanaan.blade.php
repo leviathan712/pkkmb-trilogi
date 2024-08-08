@@ -44,7 +44,7 @@
             </div>
             <div class="ml-4">
                 <h2 class="text-lg font-semibold text-black">Email</h2>
-                <p class="text-gray-600">Email Resmi Panitia PKKMB Ansakbracana 2024.<br>kemahasiswaan@upr.ac.id</p>
+                <p class="text-gray-600">Email Resmi Panitia PKKMB Ansakbracana 2024.<br>example@trilogi.ac.id</p>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
             </div>
             <div class="ml-4">
                 <h2 class="text-lg font-semibold text-black">Kontak</h2>
-                <p class="text-gray-600">Nomor Telepon Panitia PKKMB Ansakbracana 2024 yang dapat dihubungi.<br>(0536) 3221722</p>
+                <p class="text-gray-600">Nomor Telepon Panitia PKKMB Ansakbracana 2024 yang dapat dihubungi.<br>(000) xxxxx</p>
             </div>
         </div>
 
@@ -77,9 +77,7 @@
         <p class="social-media-subheader">Ikuti untuk temukan keseruan terkait PKKMB 2024</p>
         <div class="social-media-icons">
             <i class="fab fa-instagram social-media-icon"></i>
-            <i class="fab fa-facebook-f social-media-icon"></i>
             <i class="fab fa-youtube social-media-icon"></i>
-            <i class="fab fa-tiktok social-media-icon"></i>
         </div>
         <button class="mt-2 py-2 px-4 bg-blue-500 text-white rounded-lg">Kembali ke Beranda</button>
     </div>
