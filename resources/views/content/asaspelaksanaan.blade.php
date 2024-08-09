@@ -71,7 +71,6 @@
         </div>
     </div>
 
-    <div class="pb-6"></div>
     <div class="social-media-container">
         <h2 class="social-media-header">Media Sosial Official PKKMB Universitas Trilogi</h2>
         <p class="social-media-subheader">Ikuti untuk temukan keseruan terkait PKKMB 2024</p>
